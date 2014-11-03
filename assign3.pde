@@ -186,8 +186,8 @@ void mousePressed(){
        mouseY >= iy && mouseY <= iy+sideLength){
     
  // --------------- put you code here -------     
-int col = (mouseX - ix)/SLOT_SIZE;
-int row = (mouseY - iy)/SLOT_SIZE;
+int col = int((mouseX - ix)/SLOT_SIZE);
+int row = int((mouseY - iy)/SLOT_SIZE);
 
 //判定安全變白色
 if (slot[col][row]!=SLOT_BOMB){
@@ -205,7 +205,8 @@ if ((mouseButton == LEFT)&&(slot[col][row] != SLOT_BOMB)) {
   clickCount++; 
 } else { clickCount = 0; 
 }
-// println(clickCount);
+ println(clickCount);
+ 
 if (nSlot*nSlot - bombCount == clickCount){
   gameState = GAME_WIN;
 }

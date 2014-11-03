@@ -67,7 +67,9 @@ void draw(){
           break;
     case GAME_RUN:
           //---------------- put you code here ----
-          //判斷輸贏
+          if (nSlot*nSlot - bombCount == clickCount){
+  gameState = GAME_WIN;
+}//判斷輸贏
           // -----------------------------------
           break;
     case GAME_WIN:
@@ -200,16 +202,13 @@ if (slot[col][row]==SLOT_BOMB){
   gameState = GAME_LOSE;
 }
 
-//
-if ((mouseButton == LEFT)&&(slot[col][row] != SLOT_BOMB)) {
-  clickCount++; 
-} else { clickCount = 0; 
+//count
+if((mouseButton == LEFT)&& slot[col][row]==SLOT_OFF){
+  slot[col][row]=SLOT_SAFE;
+  showSlot(col,row,SLOT_SAFE);
+  clickCount++;
 }
- //println(clickCount);
- 
-if (nSlot*nSlot - bombCount == clickCount){
-  gameState = GAME_WIN;
-}
+//println(clickCount);
     // -------------------------
     
   }

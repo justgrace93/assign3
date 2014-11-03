@@ -205,7 +205,7 @@ if ((mouseButton == LEFT)&&(slot[col][row] != SLOT_BOMB)) {
   clickCount++; 
 } else { clickCount = 0; 
 }
- println(clickCount);
+ //println(clickCount);
  
 if (nSlot*nSlot - bombCount == clickCount){
   gameState = GAME_WIN;
